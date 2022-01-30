@@ -6,15 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML DOM Manipulation</title>
+
 </head>
 
 <body>
+    <center><button onclick="swap(p1, p2) ">SWAP</button></center>
     <table width=100%>
         <tr>
             <td width=10%> </td>
             <td width=60%>
                 <img width="60px " height="95px " vertical-align=b ottom src="../../resources/images/Web_DDPE-KalabS.png" alt="logo ">
+
             </td>
+
             <td width=20% vertical-align: right; ">
                 <a href=" "> Podcasts </a> |
                 <a href=" "> Articles </a> |
@@ -24,7 +28,7 @@
             </td>
             <td width=10%></td>
         </tr>
-
+     
     </table>
     <hr style="border-width: 3px; color: black; ">
     <table width=100%>
@@ -49,13 +53,7 @@
         <tr>
             <td width=10%> </td>
             <td width=60%>
-                <img width="850px " height="400px " src="../../resources/images/banners/life1.jpg " alt="A guy watching the sunset " usemap="#workmap ">
-                <map name="workmap ">
-                    <area shape="circle " coords="967,222,50 " href="../../resources/images/pexels-karolina-grabowska-6333501.jpg " alt=" ">
-                    <area shape="rect " coords="40,67,687,497 "  href="../../resources/images/simon-berger-aZjw7xI3QAA-unsplash.jpg " >
-                    <area shape="poly " coords="1046,478,1120,467,1120,267,1036,259,1021,368 " href="../../resources/images/pexels-ge-yonk-1152077.jpg " alt=" ">
-                    
-                </map>
+                <div id="p1 "><img width="850px " height="400px " src="../../resources/images/banners/life1.jpg " alt="A guy watching the sunset "></div>
             </td>
             <td width=20%>
                 <ul>
@@ -157,8 +155,11 @@ Third   1GB Mobile Data
                 <hr>
                 <h4> pick of The Week </h4>
                 <h2> 24 Hours A Day </h2>
-                <video controls loop src="../../resources/video/24_HOURS.mp4 " height=400 width=700>   
-                    <hr style="border-width: 3px; ">
+                <div id="p2 ">
+                    <video controls loop src="../../resources/video/24_HOURS.mp4 " height=400 width=700>
+                </div> 
+
+                <hr style="border-width: 3px; ">
             </td>
             <td width=20%> </td>
             <td width=10%></td>
@@ -185,6 +186,18 @@ Third   1GB Mobile Data
         </tr>
 
     </table>
+    
+    <script>
+        function swap(element1, element2) {
+        
+          var clonedElement1 = element1.cloneNode(true);
+          var clonedElement2 = element2.cloneNode(true);
+        
+          element2.parentNode.replaceChild(clonedElement1, element2);
+          element1.parentNode.replaceChild(clonedElement2, element1);
+        
+        }
+    </script>
 </body>
 
 </html>
